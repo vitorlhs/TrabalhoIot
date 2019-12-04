@@ -1,0 +1,20 @@
+<div role="form">
+  <div class="box-body">
+    <field id="produto" label="Nome" grid="12 6 3" placeholder="Informe o nome"
+      model="ceCtrl.controleEstoque.produto" readonly="ceCtrl.tabDelete"></field>
+    <field id="dataVencimento" label="Data" grid="12 6 3" placeholder="Informe a data" type="date"
+      model="ceCtrl.controleEstoque.dataVencimento" readonly="ceCtrl.tabDelete"></field>
+    <field id="ip" label="Mac Address" grid="12 6 3" placeholder="Informe o Ip"
+      model="ceCtrl.controleEstoque.ip" readonly="ceCtrl.tabDelete"></field>
+    <field id="rfId" label="Rf Id" grid="12 6 3" placeholder="Informe o rfId"
+      model="ceCtrl.controleEstoque.rfId" readonly="ceCtrl.tabDelete"></field>
+  </div>
+  <div class="box-footer">
+    <button class="btn btn-primary" ng-click="ceCtrl.create()" ng-if="ceCtrl.tabCreate">Incluir</button>
+    <button class="btn btn-info" ng-if="ceCtrl.tabUpdate" ng-click="ceCtrl.update()">Alterar</button>
+    <button class="btn btn-danger" ng-if="ceCtrl.tabDelete" ng-click="ceCtrl.delete()">Excluir</button>
+    <button class="btn btn-default" ng-click="ceCtrl.refresh()">Cancelar</button>
+    <button class=" btn btn-primary hide" ng-click="ceCtrl.ledOn()">ligar</button>
+    <button class=" btn btn-primary hide" ng-click="ceCtrl.ledOff()"> desligar</button>
+  </div>
+</div>

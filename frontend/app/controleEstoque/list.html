@@ -1,0 +1,30 @@
+<div class="box-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Data Vencimento</th>
+        <th>Mac Address</th>
+        <th class ="hide">RfId</th>
+        <th>Excluir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="controleEstoque in ceCtrl.controleEstoques">
+        <td>{{ controleEstoque.produto }}</td>
+        <td>{{ controleEstoque.dataVencimento }}</td>
+        <td>{{ controleEstoque.ip }}</td>
+        <td class="hide">{{ controleEstoque.rfId }}</td>
+        <td class="table-actions">
+          <button class="btn btn-warning hide" ng-click="ceCtrl.showTabUpdate(controleEstoque)"><i class="fa fa-pencil hide"></i></button>
+          <button class="btn btn-danger" ng-click="ceCtrl.showTabDelete(controleEstoque)"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="form-group">
+  <label for="usr">Qual produto deseja retirar do estoque?</label>
+  <input type="text" class="form-control mb-3" id="produto" ng-model="produto">
+  <button class="btn btn-info" ng-click="ceCtrl.buscarProduto(produto)">Buscar Produto</button>
+</div>
